@@ -17,58 +17,66 @@ export const IntroductionView = () => {
   const completeIntro = useSequenceStore((state) => state.completeIntro);
 
   const sentences = [
-    "I DONT KNOW WHAT HAPPENED LAST NIGHT  。 ",
-    "AND I TRULY HOPE THAT EVERYTHING IS ALRIGHT  。 ",
-    "I AM ONE OF THOSE WHO IS HOLDING BACK FROM JUDGING  。 ",
-    "THE WORST THING IS NO MATTER HOW MUCH YOU LET ME DOWN  ，  ",
-    "I CANNOT STOP CARING  。 ",
-    "MY HEART IS IN TATTERS  。 ",
-    "AND FOR WHAT  ？ ",
-    "FOR SOMEONE WHO I HAVE NO CONTACT WITH  。 ",
-    "I DONT UNDERSTAND  。 ",
-    "THIS IS HOW MUCH I CARE  。 ",
-    "YOU CAN TURN AROUND  ，  BREAK HUNDREDS OF HEARTS A SINGLE INSTANT  … ",
-    "SOMETHING I COULD NEVER COMPREHEND IN GENERAL  。 ",
-    "MY HEART IS BROKEN  。 ",
-    "AND THE WORST PART IS I FEEL RESPONSIBLE  。 ",
+    "I DONT KNOW",
+    "WHAT HAPPENED LAST NIGHT. ",
+    "AND I TRULY HOPE THAT EVERYTHING IS ALRIGHT. ",
+    "I AM ONE OF THOSE WHO IS HOLDING BACK FROM JUDGING. ",
+    "THE WORST THING IS NO MATTER HOW MUCH",
+    "YOU LET ME DOWN, I CANNOT STOP CARING.",
+    "MY HEART IS IN TATTERS. ",
+    "AND FOR WHAT ? ",
+    "FOR SOMEONE WHO I HAVE NO CONTACT WITH. ",
+    "I DONT UNDERSTAND. ",
+    " ",
+    "THIS IS HOW MUCH I CARE. ",
+    " ",
+    "YOU CAN TURN AROUND，",
+    "BREAK HUNDREDS OF HEARTS",
+    "A SINGLE INSTANT  …",
+    "SOMETHING I COULD NEVER COMPREHEND IN GENERAL.",
+    "MY HEART IS BROKEN . ",
+    "AND THE WORST PART IS",
+    "I FEEL RESPONSIBLE  . ",
     "✺ HEDI SLIMANE",
   ];
 
   function handleComplete() {
-    setShowAnimation(false);
     completeIntro();
   }
 
   return (
-    <main className="flex flex-col h-screen relative overflow-hidden">
-      <div className="flex-1 flex items-center justify-center p-8 bg-white min-h-[80vh]">
-        <div className="max-w-3xl mx-auto relative z-10">
-          {showAnimation ? (
-            <AnimatedText
-              sentences={sentences}
-              className="font-bold text-gray-800"
-              wordDelay={1.2}
-              staggerDelay={0.4}
-              moveDuration={5}
-              displayDuration={10}
-              fadeOutDuration={2.5}
-              nextSentenceDelay={4}
-              onSkip={handleComplete}
-            />
-          ) : (
-            <p>Skipped</p>
-          )}
-        </div>
+    <div className="flex flex-col h-screen relative overflow-hidden bg-white">
+      {/* Adding a static text for reference (this will be visible) */}
+      <div className="mt-20 text-center text-red-500 font-bold"></div>
+
+      {/* Text container with visible border */}
+      <div
+        className="mt-32 mx-auto w-[80%] md:w-[50%] border-2 border-blue-500 p-4 bg-gray-100 z-10"
+        style={{ marginTop: "150px" }} // Inline style as a backup
+      >
+        <AnimatedText
+          sentences={sentences}
+          className=" text-gray-800"
+          wordDelay={1.2}
+          staggerDelay={0.4}
+          moveDuration={3}
+          displayDuration={10}
+          fadeOutDuration={2.5}
+          nextSentenceDelay={4}
+          fontSize="text-sm"
+          onSkip={handleComplete}
+          onComplete={handleComplete}
+        />
       </div>
 
       {showAnimation && (
-        <div className="h-[20vh] w-full relative">
+        <div className="mt-auto h-[10vh] w-full relative">
           <div
             className="absolute inset-0 bg-gradient-to-t from-white via-white to-transparent"
             aria-hidden="true"
           ></div>
         </div>
       )}
-    </main>
+    </div>
   );
 };
