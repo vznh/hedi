@@ -361,8 +361,8 @@ export default function AnimatedRandomLinks({ links }: AnimatedRandomLinksProps)
 
         {/* Pre-allocated space for text that appears below the die */}
         <div className="font-gaisyr min-h-[1.5rem] mt-2 mr-3 text-sm text-right text-white z-40">
-          <motion.div 
-            animate={{ opacity: showText ? 1 : 0 }} 
+          <motion.div
+            animate={{ opacity: showText ? 1 : 0 }}
             transition={{ duration: 0.3 }}
             className="whitespace-nowrap"
           >
