@@ -1,6 +1,5 @@
 // views/competitions/index
-import DialMenu from "@/components/DialMenu";
-import SplitViewDial from "@/components/CheckDial";
+import SplitViewDial, { DialMenuItem } from "@/components/CheckDial";
 
 // I find that I'm a very competitive person. I
 // end up being in one-sided (but not obsessive)

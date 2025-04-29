@@ -15,6 +15,7 @@ interface AnimatedTextProps {
   fontSize?: string
   lineHeight?: string
   onSkip?: () => void
+  onComplete?: () => void;
 }
 
 interface WordState {
