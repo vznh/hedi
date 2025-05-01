@@ -51,7 +51,7 @@ export const IntroductionView = () => {
 
       {/* Text container with visible border */}
       <div
-        className="mt-32 mx-auto w-[80%] md:w-[50%] border-2 border-blue-500 p-4 bg-gray-100 z-10"
+        className="mt-32 mx-auto w-[80%] md:w-[50%] p-4  z-10"
         style={{ marginTop: "150px" }} // Inline style as a backup
       >
         <AnimatedText
