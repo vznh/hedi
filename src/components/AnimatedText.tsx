@@ -30,7 +30,7 @@ export default function AnimatedText({
   staggerDelay = 0.4,
   moveDuration = 1.5,
   displayDuration = 10,
-  fadeOutDuration = 2.5,
+  fadeOutDuration = 4,
   nextSentenceDelay = 5,
   fontSize = "text-sm",
   lineHeight = "leading-relaxed",
