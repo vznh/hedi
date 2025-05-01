@@ -33,7 +33,7 @@ const auraColors = [
 ]
 
 // Updated placeholder texts from your remote version
-const placeholderTexts = ["fortuitous?", "chaos theory doesn't apply here", "nice", "beautiful"]
+const placeholderTexts = ["fortuitous?"]
 
 export default function AnimatedRandomLinks({ links }: AnimatedRandomLinksProps) {
   const [positions, setPositions] = useState<Position[]>([])

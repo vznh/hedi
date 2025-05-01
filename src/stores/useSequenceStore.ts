@@ -11,6 +11,7 @@ interface SequenceState {
     | "competitions"
     | "philosophy"
     | "products"
+    | "guestboard"
     | "chatting";
   introCompleted: boolean;
   setCurrentView: (view: SequenceState["currentView"]) => void;
