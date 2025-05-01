@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open Graph / Facebook */}
         <meta property="og:title" content="Jason Son" />
         <meta property="og:description" content="Personal website of Jason Son." />
-        <meta property="og:image" content="https://hobin.dev/images/og-image.png" />
+        <meta property="og:image" content="/cover.png" />
         <meta property="og:url" content="https://hobin.dev" />
         <meta property="og:type" content="website" />
 
@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vivivinh" />
         <meta name="twitter:creator" content="@vivivinh" />
+        <meta name="twitter:image" content="/cover.png" />
 
         {/* Theme Color */}
         <meta name="theme-color" content="#000000" />
