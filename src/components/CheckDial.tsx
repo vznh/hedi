@@ -281,7 +281,7 @@ export default function SplitViewDial({
                     />
                   </div>
                   <div
-                    className="font-gaisyr ml-4 text-xl font-medium transition-colors duration-150 select-none"
+                    className="font-favorit ml-4 text-xl font-medium transition-colors duration-150 select-none"
                     style={{
                       color: itemColor,
                     }}
