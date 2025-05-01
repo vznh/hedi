@@ -6,10 +6,10 @@ import SplitViewDial, { DialMenuItem } from "@/components/CheckDial";
 // competitions with everyone all of the time.
 // Some may view this as a trait that indicates
 // unhealthy argumentative foreshadowing, but
-// physically to digitally, I am someone
-// that strives to perform my very best because
-// my life is truly mine, and I choose to make
-// the best of it.
+// I beg to differ. I am an individual where,
+// physically to digitally, I am one that strives
+// to perform my very best because my life is truly
+// mine, and I choose to make the best of it.
 
 export const CompetitionView = () => {
   const items: DialMenuItem[] = [
@@ -47,6 +47,10 @@ export const CompetitionView = () => {
     console.log("Selected");
   }
   return (
-    <SplitViewDial items={items} onSelect={handleSelect} highlightColor="#fc3d39" />
+    <SplitViewDial
+      items={items}
+      onSelect={handleSelect}
+      highlightColor="#fc3d39"
+    />
   );
 };

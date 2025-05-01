@@ -12,15 +12,15 @@
   .btn {
     @apply px-4 py-2 rounded transition-colors duration-200;
   }
-  
+
   .btn-primary {
     @apply bg-secondary text-primary hover:bg-hover disabled:bg-disabled disabled:cursor-not-allowed;
   }
-  
+
   .link {
     @apply text-primary hover:text-accent-light transition-colors duration-200;
   }
-  
+
   .card {
     @apply bg-secondary p-4 rounded-lg border border-accent;
   }
@@ -34,13 +34,17 @@
   font-display: swap;
 }
 
-.font-favorit {
-  font-family: "Favorit", Arial, sans-serif;
-}
-
 @font-face {
   font-family: "Gaisyr";
   src: url("/fonts/Gaisyr.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Holla";
+  src: url("/fonts/Holla.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

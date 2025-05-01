@@ -1,4 +1,4 @@
-import { EntranceView, IntroductionView, CompetitionView } from "@/views";
+import { EntranceView, IntroductionView, CompetitionView, GuesthouseView } from "@/views";
 import { useSequenceStore } from "@/stores/useSequenceStore";
 import RandomLinks from "@/components/RandomLinks";
 
@@ -10,6 +10,8 @@ export default function Home() {
       return <IntroductionView />;
     case "entrance":
       return <EntranceView />;
+    case "guestboard":
+      return <GuesthouseView />;
     default:
       return <p>Defaulted</p>;
   }
