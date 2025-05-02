@@ -8,7 +8,6 @@ import Cookies from "js-cookie"
 import { motion } from "framer-motion"
 
 import { getGuestNotes, addGuestNote } from "@/services/GuestboardService";
-import type { GuestNoteInterface } from "@/services/GuestboardService";
 
 interface Note {
   id: string
@@ -110,7 +109,10 @@ export default function Guestboard() {
       `Someone says hi from ${city}`,
       `Someone from ${city} was here`,
       `Hailing from ${city}`,
-    ]
+      `Salutations from ${city}`,
+      `Sojourned from ${city}`,
+      `Someone is repping ${city} here`
+    ];
     return greetings[Math.floor(Math.random() * greetings.length)]
   }
 
