@@ -19,8 +19,7 @@ export const EntranceView = () => {
     { id: 4, text: "competitions", url: "/competitions" },
     { id: 5, text: "philosophy", url: "/blog" },
     { id: 6, text: "products", url: "/resume" },
-    { id: 7, text: "chatting", url: "/services" },
-    { id: 8, text: "guestboard", url: "/guestboard" },
+    { id: 7, text: "guestboard", url: "/guestboard" },
   ];
 
   return (

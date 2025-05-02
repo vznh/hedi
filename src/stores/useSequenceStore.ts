@@ -3,16 +3,16 @@ import { create } from "zustand";
 
 interface SequenceState {
   currentView:
-    | "intro"
-    | "entrance"
-    | "about"
-    | "works"
-    | "designs"
-    | "competitions"
-    | "philosophy"
-    | "products"
-    | "guestboard"
-    | "chatting";
+  | "intro"
+  | "entrance"
+  | "about"
+  | "works"
+  | "designs"
+  | "competitions"
+  | "philosophy"
+  | "products"
+  | "guestboard";
+
   introCompleted: boolean;
   setCurrentView: (view: SequenceState["currentView"]) => void;
   completeIntro: () => void;
