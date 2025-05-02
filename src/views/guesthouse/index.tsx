@@ -17,10 +17,10 @@ import Guestboard from "@/components/Guestboard"
 
 export const GuesthouseView = () => {
   return <div className="relative w-full h-screen">
-    <div className="absolute top-8 left-8 p-8 z-10 max-w-md bg-opacity-80 rounded-md bg-white">
+    <div className="absolute bottom-8 left-8 p-8 z-10 max-w-md bg-opacity-80 bg-slate-100 ">
       <h1 className="font-holla text-4xl font-bold text-black mb-2">GUESTBOARD</h1>
       <p className="font-favorit text-black">
-        Share where you&apos;re from. Allow this website to track your geolocation and place a note on the board anywhere. <br /><br />Notes may take a moment to load. You can only place one.<br />
+        Share where you&apos;re from. Allow this website to track your geolocation and place a note on the board anywhere. <br /><br />+ Notes may take a moment to load. <br />+ You can only place one.
       </p>
     </div>
 
