@@ -4,9 +4,13 @@
 // was an engineering marvel to me. An enigma among the
 // countless PHP websites. They took it upon themself to
 // design, animate, and code the poem into their artistic
-// expression. The lengths that someone will take to
-// express their relation and compassion to others amazes,
-// inspires, and drives me.
+// expression.
+
+// He found a way to express himself despite the technological
+// challenges. We have no idea how, but he did it.
+
+// Just finding a solution to a seemingly bounded problem was why I chose
+// this path of mine to pursue.
 
 import AnimatedText from "@/components/AnimatedText";
 import { useSequenceStore } from "@/stores/useSequenceStore";
@@ -17,27 +21,24 @@ export const IntroductionView = () => {
   const completeIntro = useSequenceStore((state) => state.completeIntro);
 
   const sentences = [
-    "I DONT KNOW",
-    "WHAT HAPPENED LAST NIGHT. ",
-    "AND I TRULY HOPE THAT EVERYTHING IS ALRIGHT. ",
-    "I AM ONE OF THOSE WHO IS HOLDING BACK FROM JUDGING. ",
-    "THE WORST THING IS NO MATTER HOW MUCH",
-    "YOU LET ME DOWN, I CANNOT STOP CARING.",
+    "I DON'T KNOW",
+    "WHAT HAPPENED LAST NIGHT.",
+    "AND I TRULY HOPE THAT EVERYTHING IS ALRIGHT.",
+    "I AM ONE OF THOSE WHO IS HOLDING BACK FROM JUDGING.",
+    "THE WORST THING IS NO MATTER HOW MUCH YOU LET ME DOWN, I CANNOT STOP CARING.",
     "MY HEART IS IN TATTERS. ",
-    "AND FOR WHAT ? ",
-    "FOR SOMEONE WHO I HAVE NO CONTACT WITH. ",
+    "AND FOR WHAT?",
+    "FOR SOMEONE WHO I HAVE NO CONTACT WITH.",
     "I DONT UNDERSTAND. ",
-    " ",
     "THIS IS HOW MUCH I CARE. ",
-    " ",
-    "YOU CAN TURN AROUND，",
+    "                                                                                                YOU CAN TURN AROUND",
     "BREAK HUNDREDS OF HEARTS",
-    "A SINGLE INSTANT  …",
-    "SOMETHING I COULD NEVER COMPREHEND IN GENERAL.",
-    "MY HEART IS BROKEN . ",
+    "A SINGLE INSTANT",
+    "                                                                                 SOMETHING I COULD NEVER COMPREHEND",
+    "IN GENERAL",
+    "                                                                                                 MY HEART IS BROKEN.",
     "AND THE WORST PART IS",
-    "I FEEL RESPONSIBLE  . ",
-    "✺ HEDI SLIMANE",
+    "I FEEL RESPONSIBLE.",
   ];
 
   function handleComplete() {

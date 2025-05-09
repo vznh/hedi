@@ -15,7 +15,7 @@ interface AnimatedTextProps {
   fontSize?: string
   lineHeight?: string
   onSkip?: () => void
-  onComplete?: () => void;
+  onComplete?: () => void
 }
 
 interface WordState {
@@ -35,6 +35,7 @@ export default function AnimatedText({
   fontSize = "text-sm",
   lineHeight = "leading-relaxed",
   onSkip,
+  onComplete,
 }: AnimatedTextProps) {
   const [wordStates, setWordStates] = useState<Record<string, WordState>>({})
   const [isAnimating, setIsAnimating] = useState(false)
@@ -59,8 +60,24 @@ export default function AnimatedText({
     clearAllTimeouts()
     setWordStates({})
 
+    // Calculate total words to track the last one
+    let totalWordCount = 0
+    let lastSentenceIndex = 0
+    let lastWordIndex = 0
+
+    sentences.forEach((sentence, idx) => {
+      const words = sentence.split(" ").filter((word) => word.trim() !== "")
+      totalWordCount += words.length
+      if (words.length > 0) {
+        lastSentenceIndex = idx
+        lastWordIndex = words.length - 1
+      }
+    })
+
     sentences.forEach((sentence, sentenceIndex) => {
-      const words = sentence.split(" ")
+      // Handle indentation by preserving leading spaces
+      const leadingSpaces = sentence.match(/^(\s+)/) ? sentence.match(/^(\s+)/)![0].length : 0
+      const words = sentence.trim().split(" ")
 
       let sentenceBaseDelay = 0
       if (sentenceIndex > 0) {
@@ -68,6 +85,8 @@ export default function AnimatedText({
       }
 
       words.forEach((word, wordIndex) => {
+        if (word === "") return // Skip empty words
+
         const wordKey = `${sentenceIndex}-${wordIndex}`
         const wordAppearDelay = sentenceBaseDelay + (wordDelay + wordIndex * staggerDelay) * 1000
 
@@ -77,11 +96,22 @@ export default function AnimatedText({
             [wordKey]: { visible: true, fading: false },
           }))
 
+          // Set timeout for fading out
           addTimeout(() => {
             setWordStates((prev) => ({
               ...prev,
               [wordKey]: { visible: true, fading: true },
             }))
+
+            // Check if this is the last word of the last sentence
+            if (sentenceIndex === lastSentenceIndex && wordIndex === lastWordIndex) {
+              // Add timeout for completion after the fade out duration
+              addTimeout(() => {
+                if (onComplete) {
+                  onComplete()
+                }
+              }, fadeOutDuration * 1000)
+            }
           }, displayDuration * 1000)
         }, wordAppearDelay)
       })
@@ -110,17 +140,26 @@ export default function AnimatedText({
     <div className={`${className} relative w-full h-full flex items-center justify-center`}>
       <div className="max-w-full">
         {sentences.map((sentence, sentenceIndex) => {
-          const words = sentence.split(" ")
+          // Extract indentation information
+          const leadingSpaces = sentence.match(/^(\s+)/) ? sentence.match(/^(\s+)/)![0] : ""
+          const indentSize = leadingSpaces.length * 0.25 // 0.25em per space
+          const words = sentence.trim().split(" ")
 
           return (
-            <div key={`sentence-${sentenceIndex}`} className={`mb-1 ${fontSize} ${lineHeight}`}>
+            <div
+              key={`sentence-${sentenceIndex}`}
+              className={`mb-1 ${fontSize} ${lineHeight}`}
+              style={{ paddingLeft: `${indentSize}em` }}
+            >
               <div className="relative">
                 <div className="opacity-0 select-none" aria-hidden="true">
-                  {sentence}
+                  {sentence.trim()}
                 </div>
 
                 <div className="absolute top-0 left-0 flex flex-wrap">
                   {words.map((word, wordIndex) => {
+                    if (word === "") return null // Skip empty words
+
                     const wordKey = `${sentenceIndex}-${wordIndex}`
                     const wordState = wordStates[wordKey] || {
                       visible: false,
